@@ -1,7 +1,5 @@
 import pandas as pd
 from datetime import date
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 import yfinance as yf
 import numpy as np
