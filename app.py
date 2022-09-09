@@ -30,7 +30,7 @@ with tab1:
 
 
 with tab2:
-    st.header("Oil & Gas")
+    st.header("Oil (CL=F) & Gas (NG=F")
     tickers = ['NG=F', 'CL=F']
     currency=tickers
     start='2020-01-01'
