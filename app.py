@@ -81,7 +81,7 @@ with tab5:
     st.plotly_chart(fig5, use_container_width=True)   
 
 with tab6:
-    st.header("Inflation Rates")
+    st.header("GDP/Capita Europe")
     gdppercap=wb.data.DataFrame('NY.GDP.PCAP.CD', wb.region.members('EMU'))
     fig6 = gdppercap.iloc[:,-6:].iplot(asFigure=True, kind='bar', title='GDP per Capita in Europe')
     st.plotly_chart(fig6, use_container_width=True)   
