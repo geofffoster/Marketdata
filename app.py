@@ -12,7 +12,7 @@ import streamlit as st
 st.title('Selected Market Prices.')
 
 
-tab1, tab2 = st.tabs(["Currencies", "Oil & Gas"])
+tab1, tab2, tab3 = st.tabs(["Currency Pairs NZ", "Currency Pairs UK", "Oil & Gas"])
 
 
 with tab1:
@@ -23,7 +23,6 @@ with tab1:
     end=date.today()
 
     df =  yf.download(tickers, start, end)['Adj Close']
-
     fig = df.iplot(asFigure=True, xTitle="Time",
             yTitle="Prices", title="Currency Prices")
     st.plotly_chart(fig, use_container_width=True)
@@ -36,14 +35,13 @@ with tab2:
     end=date.today()
 
     df =  yf.download(tickers, start, end)['Adj Close']
-
     fig2 = df.iplot(asFigure=True, xTitle="Time",
             yTitle="Prices", title="Currency Prices")
     st.plotly_chart(fig2, use_container_width=True)    
 
 
 with tab3:
-    st.header("Oil (CL=F) & Gas (NG=F")
+    st.header("Oil (CL=F) & Gas (NG=F)")
     tickers = ['NG=F', 'CL=F']
     currency=tickers
     start='2020-01-01'
