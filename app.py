@@ -1,5 +1,4 @@
 import pandas as pd
-from scipy import stats 
 from datetime import date
 import matplotlib.pyplot as plt
 import seaborn as sns
