@@ -37,9 +37,9 @@ with tab2:
 
     df =  yf.download(tickers, start, end)['Adj Close']
 
-    fig = df.iplot(asFigure=True, xTitle="Time",
+    fig2 = df.iplot(asFigure=True, xTitle="Time",
             yTitle="Prices", title="Currency Prices")
-    st.plotly_chart(fig, use_container_width=True)    
+    st.plotly_chart(fig2, use_container_width=True)    
 
 
 with tab3:
