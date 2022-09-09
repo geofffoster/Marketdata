@@ -30,7 +30,7 @@ with tab1:
 
 with tab2:
     st.header("Currency Pairs UK")
-    tickers =['['EURUSD=X', 'GBPEUR=X',  'GBPUSD=X']
+    tickers = ['EURUSD=X', 'GBPEUR=X',  'GBPUSD=X']
     currency=tickers
     start='2020-01-01'
     end=date.today()
