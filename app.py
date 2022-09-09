@@ -38,5 +38,5 @@ with tab2:
 
     df =  yf.download(tickers, start, end)['Adj Close']
     fig2 = go.Figure(**tools.merge_figures([df.figure(columns=['NG=F']), df.figure(columns=['CL=F'], color='green')])).set_axis(['CL=F'], side='right')
-    fig2['layout'].update(title='Oil and Gas Prices2')
+    fig2['layout'].update(title='Oil and Gas Prices')
     st.plotly_chart(fig2, use_container_width=True)
