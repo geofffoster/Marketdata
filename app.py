@@ -14,8 +14,8 @@ import streamlit as st
 st.title('Selected Market Prices.')
 
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Currency Pairs NZ", "Currency Pairs UK", "Oil & Gas", 
-    "Ruble", "Interest Rates", "GDP per Capita"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7  = st.tabs(["Currency  NZ", "Currency  UK", "Oil & Gas", 
+    "Ruble", "Interest Rates", "GDP per Capita" ,"Inflation Rates"])
 
 
 with tab1:
@@ -85,3 +85,14 @@ with tab6:
     gdppercap=wb.data.DataFrame('NY.GDP.PCAP.CD', wb.region.members('EMU'))
     fig6 = gdppercap.iloc[:,-6:].iplot(asFigure=True, kind='bar', title='GDP per Capita in Europe')
     st.plotly_chart(fig6, use_container_width=True)   
+
+with tab7:
+    st.header("GDP/Capita Europe")
+    data1 = pd.read_html('https://tradingeconomics.com/country-list/inflation-rate')
+    data2 = pd.read_html('https://tradingeconomics.com/country-list/inflation-rate?continent=australia')
+    g20_interest_rates = data1[0].set_index('Country')
+    aus_interest_rates = data2[0].set_index('Country')
+    fig7 = g20_interest_rates.iplot(asFigure=True,kind='bar', title='G20 Inflation Rates')
+    st.plotly_chart(fig7, use_container_width=True) 
+    fig8 = aus_interest_rates.iplot(asFigure=True,kind='bar', title='Australasia Inflation Rates')
+    st.plotly_chart(fig8, use_container_width=True)  
