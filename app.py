@@ -26,7 +26,7 @@ with tab1:
 
     fig = df.iplot(asFigure=True, xTitle="Time",
             yTitle="Prices", title="Currency Prices")
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
 
 
 with tab2:
@@ -37,7 +37,6 @@ with tab2:
     end=date.today()
 
     df =  yf.download(tickers, start, end)['Adj Close']
-
-    fig2 = df.iplot(asFigure=True, xTitle="Time",
-            yTitle="Prices", title="Currency Prices")
-    st.plotly_chart(fig2)
+    fig2 = go.Figure(**tools.merge_figures([df.figure(columns=['NG=F']), df.figure(columns=['CL=F'], color='green')])).set_axis(['CL=F'], side='right')
+    fig2['layout'].update(title='Oil and Gas Prices2)
+    st.plotly_chart(fig2, use_container_width=True)
